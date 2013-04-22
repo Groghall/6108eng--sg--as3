@@ -1,0 +1,22 @@
+<html lang="en">
+  <body>
+  	<div class ="container">
+   <%- model_class = Faq -%>
+    <div class="page-header">
+      <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,:default => "Edit #{model_class.model_name.human}") %></h1>
+    </div>
+<%= render :partial =>'form' %>
+
+<%= link_to 'Show', @faq %> |
+<%= link_to 'Back', faqs_path %>
+
+
+<hr>
+        <footer>
+          <a href="https://www.facebook.com/pages/The-Oval-Ski-Club/240654432678815?fref=ts"><img src="../assets/icon-facebook.png"/></a>
+          <p>&copy; Company 2012</p>
+        </footer>
+      </hr>
+</div>
+</body>
+</html>k

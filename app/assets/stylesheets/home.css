@@ -1,0 +1,139 @@
+@import url(assets/css/bootstrap.css);
+@import url(assets/css/bootstrap-responsive.css);
+@import url(assets/css/scaffolds.css);
+@import url(assets/css/weatherslider.css);
+@import url(assets/css/style.css);
+@import url(assets/css/galleria.classic.css);
+body  
+  {
+    background-image:url(../assets/texture1.png);
+    padding-top: 60px;
+    padding-bottom: 20px;
+    font-family:  "Gill Sans", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  [class^="icon-"], [class*=" icon-"] 
+  {
+    background-image: url(../assets/glyphicons-halflings.png)
+  }
+  .row-fluid
+  {
+    text-align: center;
+    padding: none;
+    margin-bottom: 10px;
+    font-size: 18px;  
+    background-color: white;
+    -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  }
+  .row
+  {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;  
+    background-color: white;
+    -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  }
+  .container-fluid 
+  { 
+   margin-right: auto; 
+   margin-left: auto;
+    background-color: white;
+    -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px; 
+   max-width: 500px;
+
+} 
+  table 
+  {
+    max-width: 150%;
+    background-image:url(../assets/texture1.png);
+  }
+  .form-actions 
+  {
+    padding: 19px 20px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-image:url(../assets/texture1.png);
+    border-top: 1px solid #e5e5e5;
+    *zoom: 1;
+  }
+  footer
+  {
+    text-align: center;
+  }
+  .carousel-caption 
+  {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  font-size: 30px;
+  background: #333333;
+  background: rgba(0, 0, 0, 0.75);
+  }
+
+  .carousel-caption h4,
+  .carousel-caption p 
+  {
+  line-height: 30px;
+  color: #ffffff;
+  }
+
+  .carousel-caption h4 
+  {
+  margin: 0 0 5px;
+  }
+
+  .carousel-caption p 
+  {
+  margin-bottom: 0;
+  }
+  .hero-unit 
+  {
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  }
+  .hero-unit h1 
+  {
+    font-size: 40px
+  }
+  .ws-container,
+  .ws-fullbg,
+  .ws-bottombg,
+  {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  }
+  .ws-ex-inner {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+  }
+
+  .ws-ex-inner-responsive {
+  width: auto;
+  max-width: 990px;
+  padding: 0px 5px;
+  }
+  div.htmltooltip{
+  position: absolute; /*leave this and next 3 values alone*/
+  z-index: 1000;
+  left: -1000px;
+  top: -1000px;
+  background: #272727;
+  border: 10px solid black;
+  color: white;
+  padding: 3px;
+  width: 250px; /*width of tooltip*/
+  }

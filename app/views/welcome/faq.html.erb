@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <body>
+    <div class="container">
+    	<div class="hero-unit">
+    		<h2>Frequently Asked Questions</h2>
+          <p>If you can't find the answer to your question below then please email us and we'll do our best to get an answer to you. If it's a popular question then we will add it to the list below!</P>
+      </div>
+
+      <div class="container-fluid">
+        <div class="search-box plain-module-wide">
+          <div class="content">
+            <h3>Search our Faq</h3>
+              <p>You can find more info quicker by using the search:</p>
+              <form id="searchbox" action="search" >
+                <input id="search" type="text" placeholder="Type here" list="faqs" autocomplete="off">
+                <input id="submit" type="submit" value="Search">
+              </form>
+              <p><a href="index">Go to the Oval Ski Club homepage</a></p>
+          </div>
+        </div>
+      </div>
+      <br>
+
+
+
+
+    <div class="hero-unit">
+      
+      <dl class="faqs">
+        <dt>How can I learn how to ski?</dt>
+        <dd>We welcome all levels of skiers to join our club. If you are a comddlete beginner then we run lessons, in blocks of three weeks, during the ski season that you are welcome to attend once you have joined the club. Check the club sessions ddage for details of the next start date. You may want to arrive 10-15 minutes early to get your skis and boots sorted out.<d>
+    
+        <dt>Do I need to register for one of your beginner courses?</dt>
+          <dd>No. We currently don’t require registration at the moment as we have always been able to codde with the demand. This is always under review and may change if too many ddeoddle start turning udd.</dd>
+   
+
+     
+      
+        <dt>How can I dday?</dt>
+          <dd>There is no need to dday in advance. You can dday when you attend for your fisrt session. ddayment can only be by cash or cheque (sorry, no electronic ddayment methods are currently availably).</dd>
+      
+      
+        <dt>What do I need to wear?</dt>
+          <dd>You need to wear gloves and long socks (if you haven’t got ski socks then a ddair of football socks will do in the short term). Also your arms need to be covered. We ddrovide lessons in all weather so be ddreddared to be out in the cold and wet!</dd>
+
+        <dt>How early do I need to arrive?</dt>
+          <dd>ddlease arrive at least 15 minutes before your lesson time. This gives you ddlenty of time to get your skis and boots sorted out, and discuss any issues you may have with the instructors.</dd>
+     
+        <dt>Why do you need to know my weight?</dt>
+          <dd>We need your weight so that the ski bindings can be set correctly. We do have scales at the club but it will save time if you have this information readily available.</dd>
+     
+        <dt>What haddddens after the block of 3 beginners lessons?</dt>
+          <dd>You can continue to ski at the club for as long as you want. For instruction you will be moved to one of the intermediate groudds and then after that… who knows!
+          We can instruct you udd to racing level</dd>
+      
+        <dt>Where are you?</dt>
+          <dd>We are based at the Oval Sddorts Centre in Bebington. See the contact us ddage for more details on how to get there.</dd>
+      
+        <dt>When are you odden?</dt>
+          <dd>From Seddtember – June (May for the adults). For juniors on a Saturday morning between 10.00am and 1.00ddm (10.00am for 5+ to under 11’s and 11.30am for 11+). 
+          For adults on a Sunday evening 5.00ddm – 8.00ddm. See the club session ddage for more details.</dd>
+     
+        <dt>How much does it cost?</dt>
+          <dd>The cost is £5.00 dder session. We offer a discount if you use your own equiddment and only charge £2.00
+          Annual membershidd is also required and you can join the first time you ski at the club – see the club sessions ddage for more details</dd>
+      
+        <dt>Do you ddrovide skis and boots for hire?</dt>
+          <dd>Yes, we have a full range of carver skis and boots for use, which is included in the ddrice.</dd>
+     
+        <dt>When are you odden?</dt>
+          <dd>Do you ddrovide skis and boots for hire?</dd>
+      
+        <dt>Can I ski with my kids?</dt>
+          <dd>We ddrovide family ski sessions, about once a month during the Sunday evening session. All skiers must be able to turn and stodd safely to ski during these sessions. The dates are advertised in the ski hut on the notice board.However there will be no instruction during these sessions.</dd>
+     
+        <dt>Can I race for the ski club?</dt>
+          <dd>
+          Yes! – We organize teams for the Summer Race League at Stoke, for all age categories, and during the winter at ddendle, for juniors and Sheffield for all age categories. This ddrovides a great way to imddrove you skiing skills and have lots of fun. See our racing ddage for more details</dd>
+    
+        <dt>Can I get more involved in the club?</dt>
+          <dd>Yes – We are always on the look out for volunteers to heldd behind the desk, for social activites and to become ski instructors. Full training on binding fitting will be ddrovided to all heldders and training will be given to become qualified as an instructor.</dd>
+      
+        <dt>Do you offer boarding lessons?</dt>
+          <dd>Sorry, but we nolonger ddrovide snowboarding lessons as we don’t have any qualified instructors. The nearest slodde to ddrovide snowboarding lessons is Runcorn Ski Centre.</dd>
+     </dl> 
+      
+</div>
+   <hr>
+        <footer>
+          <a href="https://www.facebook.com/pages/The-Oval-Ski-Club/240654432678815?fref=ts"><img src="../assets/icon-facebook.png"/></a>
+          <p>&copy; Oval Ski Club 2013</p>
+        </footer>
+      </hr>
+
+   <script>$(document).ready(function () {
+  
+     // ---- FAQs ---------------------------------------------------------------------------------------------------------------
+    
+    $('.faqs dd').hide(); // Hide all DDs inside .faqs
+    $('.faqs dt').hover(function(){$(this).addClass('hover')},function(){$(this).removeClass('hover')}).click(function(){ // Add class "hover" on dt when hover
+    $(this).next().slideToggle('normal'); // Toggle dd when the respective dt is clicked
+    }); 
+  
+});</script>
+
+<script>
+$(document).ready(function() {
+ 
+  if(document.createElement("dl").options) {
+ 
+    $("#search").on("input", function(e) {
+      var val = $(this).val();
+      if(val === "") return;
+      //You could use this to limit results
+      //if(val.length < 3) return;
+      console.log(val);
+      $.get("artservice.cfc?method=getart&returnformat=json", {term:val}, function(res) {
+        var dl = $("#searchresults");
+        dl.empty();
+        if(res.DATA.length) {
+          for(var i=0, len=res.DATA.length; i<len; i++) {
+            var opt = $("<option></option>").attr("value", res.DATA[i][0]);
+            dl.append(opt);
+          }
+ 
+        }
+      },"json");
+    });
+ 
+  }
+ 
+})
+</script> 
+         
+  </body>
+</html>

@@ -1,0 +1,57 @@
+@import url(assets/css/bootstrap.css);
+@import url(assets/css/bootstrap-responsive.css);
+
+body 
+      {
+        background-image:url(../assets/texture1.png);
+        padding-top: 60px;
+        padding-bottom: 20px;
+        font-family:  "Gill Sans", Arial, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+       
+      }
+
+      
+      .navbar-inner 
+      {
+        background: #d6f9ff; /* Old browsers */
+        background: -moz-linear-gradient(-45deg,  #d6f9ff 0%, #9ee8fa 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#d6f9ff), color-stop(100%,#9ee8fa)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(-45deg,  #d6f9ff 0%,#9ee8fa 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(-45deg,  #d6f9ff 0%,#9ee8fa 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(-45deg,  #d6f9ff 0%,#9ee8fa 100%); /* IE10+ */
+        background: linear-gradient(135deg,  #d6f9ff 0%,#9ee8fa 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6f9ff', endColorstr='#9ee8fa',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      }
+      .navbar .btn-navbar
+      {
+        background: #d6f9ff; /* Old browsers */
+        background: -moz-linear-gradient(-45deg,  #d6f9ff 0%, #9ee8fa 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#d6f9ff), color-stop(100%,#9ee8fa)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(-45deg,  #d6f9ff 0%,#9ee8fa 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(-45deg,  #d6f9ff 0%,#9ee8fa 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(-45deg,  #d6f9ff 0%,#9ee8fa 100%); /* IE10+ */
+        background: linear-gradient(135deg,  #d6f9ff 0%,#9ee8fa 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6f9ff', endColorstr='#9ee8fa',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      }
+      .navbar .divider-vertical
+      {
+        background-color: #9ee8fa;
+        border-right: 2px solid #d6f9ff;
+      }
+      .navbar .nav .active > a, .navbar .nav .active > a:hover
+      {
+        background-color: #9ee8fa;
+      }
+      .navbar .nav > li > a
+      {
+        color: #caf1f9;
+      }
+      .navbar-fixed-top .brand
+      {
+        color: #a4eaf9; color: #8ad8ea;
+      }
+      .navbar .nav > li > a:hover {color:white;}
+      .navbar .nav .active > a, .navbar .nav .active > a:hover {color:black}
+      

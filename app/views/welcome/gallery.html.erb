@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="../assets/galleria.classic.css" rel="stylesheet">
+  <title>Galleria Flickr Plugin</title>
+  <style>
+    #galleria{ width: 1280px; height: 900px; background: #000 }
+    </style>
+
+  </head>
+    <body>
+        
+        <div class="container">
+      <div class="hero-unit">
+          <center>
+        <h2>Our gallery contains photos from our most recent <a href="events" id="club" data-toggle="tooltip" title="Information about the club holiday can be obtained from the events page">Club Holiday</a></h2>
+        
+        <p>Images are all sourced from Flickr</p></center>
+      </div>
+      </div>
+        <center>
+        <div class="content">
+        <div id="galleria">
+         
+        </div>
+         <p class="cred">Gallery made by <a href="http://galleria.aino.se">Galleria</a>.</p>
+        </div>
+      </center>
+      <br>
+
+      <div class="container">
+      <div class="hero-unit">
+        <center>
+        <p>If you would like to add your own images to our gallery please use the upload system below</p>
+        </center>
+      </div>
+      </div>
+      <div class"container">
+        <center>
+      <form id="myForm" method="post" action="http://api.flickr.com/services/upload/" enctype="multipart/form-data">
+      <input type="file" name="photo" id="photo"/>
+      <input type="text" name="api_key" id="api_key" value="25f3165f23e80622ae2fa05b09c1b569"/>
+      <input type="submit" value="Upload"/>
+      </form>
+      </center>
+        </div>
+        <footer>
+          <a href="https://www.facebook.com/pages/The-Oval-Ski-Club/240654432678815?fref=ts"><img src="../assets/icon-facebook.png"/></a>
+          <p>&copy; Oval Ski Club 2013</p>
+          <br>
+          <p>Page developed by <a href="http://immortalis.herokuapp.com">Stephen Gault</a>
+        </footer>
+      
+        <script src="js/galleria-1.2.9.min.js"></script>
+        <script src="js/galleria.flickr.min.js"></script>
+        <script>Galleria.loadTheme("<%= javascript_path('galleria.classic.js') %>"); 
+        var flickr = new Galleria.Flickr();
+        flickr.search('ski', function(data) {
+        Galleria.run('#galleria', {
+        dataSource: data
+        });
+        });
+        </script>
+        <script>$(document).ready(function(){ $("#club").tooltip({ placement: 'right'})});</script>
+         <script type="text/javascript">
+$(document).ready(function() {
+    $('#myForm').bind('submit', function() {
+        $(this).ajaxSubmit({
+            dataType: 'xml',
+            success:  processXml
+        });
+        return false; // <-- important!
+    });
+});
+
+function processXml(responseXML) {
+    var message = $('message', responseXML).text();
+    document.getElementById('output').innerHTML = message;
+}
+
+</script>
+        
+      
+    </body>
+</html>

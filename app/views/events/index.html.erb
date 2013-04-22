@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <% content_for :head, auto_discovery_link_tag(:atom, events_url(format: "atom")) %>
+<% content_for :head, auto_discovery_link_tag(:xml, events_url(format: "xml")) %>
+  <body><div class ="container">
+  <div class ="hero-unit">
+  <%- model_class = Event -%>
+      <div class="page-header">
+        <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+      <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= model_class.human_attribute_name(:title) %></th>
+          <th><%= model_class.human_attribute_name(:body) %></th>
+          <th><%=t '.actions', :default => t("helpers.actions") %></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @events.each do |event| %>
+      <tr>
+        <td><%= event.title %></td>
+        <td><%= event.body %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")), edit_event_path(event), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")), event_path(event), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+      <% end %>
+      </tbody>
+      </table>
+      <%= link_to t('.new', :default => t("helpers.links.new")), new_event_path, :class => 'btn btn-primary' %>
+  </div>
+  <i id="atom" data-toggle="tooltip" title="Atom RSS Feed"><%= link_to image_tag('feed-icon-28x28.png'), events_url(format: :atom) %></i>
+  <i id="xml" data-toggle="tooltip" title="xml RSS Feed"><%= link_to image_tag('feed-icon-28x28.png'), events_url(format: :xml) %></i>
+</div>
+
+      <div id="OvalSkiClub" class="carousel slide">
+        <div class="carousel-inner">
+
+          <div class="item active">
+            
+            <div class="hero-unit" style="text-align:center">
+
+            <h2>Diary</h2>
+
+              <h3>Saturday 09/02/2013</h3>
+              <h4>10:00am - 11:00am</h4>
+              <p>Junior Club for under 11's</p>
+              <h4>11:30am - 13:00pm</h4>
+              <p>Junior Club for 11+</p>
+              </div>
+          </div>
+
+            <div class="item">
+              <div class="hero-unit" style="text-align:center">
+            <h2>Diary</h2>
+
+              <h3>Sunday 10/02/2013</h3>
+              <h4>17:00pm - 18:00pm</h4>
+              <p>Adult Club - beginners lessons (week 2 of 3)</p>
+              <h4>18:00pm - 19:00pm</h4>
+              <p>Adult Club - open skiing session + improver lessons</p>
+              <h4>19:00pm - 20:00pm</h4>
+              <p>Adult Club - intermediate/advanced lessons</p>
+              </div>
+          </div>
+
+          <div class="item">
+            <div class="hero-unit" style="text-align:center">
+            <i<h2>Diary</h2>
+
+              <h3>Saturday 16/02/2013</h3>
+              <h4>10:00am - 11:00am</h4>
+              <p>Junior Club for under 11's</p>
+              <h4>11:30am - 13:00pm</h4>
+              <p>Junior Club for 11+</p>
+              </div>
+          </div>
+
+          <div class="item">
+            <div class="hero-unit" style="text-align:center">
+            <h2>Diary</h2>
+
+              <h3>Sunday 17/02/2013</h3>
+              <h4>17:00pm - 18:00pm</h4>
+              <p>Adult Club - beginners lessons (week 3 of 3)</p>
+              <h4>18:00pm - 19:00pm</h4>
+              <p>Adult Club - open skiing session + improver lessons</p>
+              <h4>19:00pm - 20:00pm</h4>
+              <p>Adult Club - intermediate/advanced lessons</p>
+              </div>
+          </div>
+
+          <div class="item">
+            <div class="hero-unit" style="text-align:center">
+            <h2>Diary</h2>
+
+              <h3>Saturday 23/02/2013</h3>
+              <h4>10:00am - 11:00am</h4>
+              <p>Junior Club for under 11's. New beginners lessons start. We are also running an under 5's taster session</p>
+              <p>Junior beginners under 11yrs welcome to enrole for new block of lessons</p>
+              <h4>11:30am - 13:00pm</h4>
+              <p>Junior Club for 11+. New beginners lessons start</p>
+              <p>Juniors beginners 11yrs+ welcome to enrole for new block of lessons</p>
+              </div>
+          </div>
+      </div>
+          <a class="carousel-control left" href="#OvalSkiClub" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#OvalSkiClub" data-slide="next">&rsaquo;</a>
+      </div>
+
+
+
+
+
+
+    <div class="hero-unit">
+      <h2>Club Holiday</h2>
+        <p>Each season the club organises a holiday to one of the popular resorts in Europe. The holiday is arranged over the Easter break making it available to all club members. The group size varies each year, based on flight availability and what the demand is expected to be, and can be anything from 50 - 100 people.</p>
+        <p>For further details or to book a place please speak to Andy Kearney. He'e down at most of the club sessions Saturday and Sunday or can be contacted on 0785 566 2891.</p>
+    </div>
+    <hr>
+        <footer>
+          <a href="https://www.facebook.com/pages/The-Oval-Ski-Club/240654432678815?fref=ts"><img src="../assets/icon-facebook.png"/></a>
+          <p>&copy; Company 2012</p>
+        </footer>
+      </hr>
+  </div>
+   <script>$(document).ready(function(){$('carousel').carousel({interval: 3000})});</script>
+   <script>$(document).ready(function(){ $("#atom").tooltip({ placement: 'top'})});</script>
+   <script>$(document).ready(function(){ $("#xml").tooltip({ placement: 'top'})});</script>
+
+    <%= yield :head %>
+</body>
+</html>
